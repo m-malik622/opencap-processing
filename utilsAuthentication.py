@@ -22,7 +22,6 @@ import requests
 from decouple import config
 import getpass
 import os
-import maskpass
 from utilsAPI import get_api_url
 
 API_URL = get_api_url()
@@ -42,6 +41,7 @@ def get_token(saveEnvPath=None):
                 print('Login with credentials used at app.opencap.ai.\nVisit the website to make an account if you do not have one.\n')
                 
                 if isSpyder:
+                    import maskpass
                     un = maskpass.advpass(prompt="Enter Username:\n",ide=True)
                     pw = maskpass.advpass(prompt="Enter Password:\n",ide=True)
                 elif isPycharm:
